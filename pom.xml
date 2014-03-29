@@ -6,8 +6,8 @@
 	<groupId>org.energy-home.jemma</groupId>
 	<artifactId>org.energy-home.jemma.jemma-toolchain-tutorial</artifactId>
 	<packaging>pom</packaging> 
-	<version>0.0.1</version>
 	<name>jemma-toolchain-tutorial</name>
+	<version>0.0.1</version>
 
 	<properties>
 		<!--General build properties-->
@@ -29,10 +29,18 @@
 		<org.apache.felix.gogo.shell.version>0.10.0</org.apache.felix.gogo.shell.version>
 		<org.apache.felix.gogo.runtime.version>0.12.0</org.apache.felix.gogo.runtime.version>
 		<org.apache.felix.gogo.command.version>0.12.0</org.apache.felix.gogo.command.version>
+
+		<!--Our bunldes versions-->
+		<org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>
+		<org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer.version>
 	</properties>
+
+
+
 
 	<modules>
 		<module>jemma-toolchain-tutorial.demoservice</module>
+		<module>jemma-toolchain-tutorial.demoserviceconsumer</module>
 		<module>jemma-toolchain-tutorial.Distribution</module>
 	</modules>
 

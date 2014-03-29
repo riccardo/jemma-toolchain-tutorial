@@ -6,10 +6,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.energy-home.jemma</groupId>
-	<artifactId>org.energy-home.jemma.jemma-toolchain-tutorial.demoservice</artifactId>
+	<artifactId>org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer</artifactId>
 	<packaging>bundle</packaging>
-	<version>${org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version}</version>
-	<name>JEMMA toolchain tutorial demoservice</name>
+	<version>${org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer.version}</version>
+	<name>JEMMA toolchain tutorial demoservice consumer</name>
 
 	<parent>
 		<groupId>org.energy-home.jemma</groupId>
@@ -34,12 +34,11 @@
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Bundle-Vendor>JEMMA Development Team</Bundle-Vendor>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
-						<Bundle-Activator>org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.activator.Activator</Bundle-Activator>
+						<Bundle-Activator>org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.activator.Activator</Bundle-Activator>
 						<Import-Package>org.osgi.framework,
-						org.osgi.service.component,*
+						org.osgi.service.component,
+						org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api,*
 						</Import-Package>
-						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api
-						</Export-Package>
 						<Service-Component>OSGI-INF/*.xml</Service-Component>
 					</instructions>
 				</configuration>
@@ -58,6 +57,11 @@
 		    <groupId>org.osgi</groupId>
 		    <artifactId>org.osgi.compendium</artifactId>
 		    <version>${org.osgi.compendium.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.energy-home.jemma</groupId>
+		    <artifactId>org.energy-home.jemma.jemma-toolchain-tutorial.demoservice</artifactId>
+		    <version>${org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version}</version>
 		</dependency>
 	</dependencies>
 </project>

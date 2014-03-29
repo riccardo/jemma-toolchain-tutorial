@@ -1,14 +1,16 @@
+# Requires mvnc.sh from https://gist.github.com/japgolly/4104053
+
 all: build
 
 build:
 	@echo 'Build: clean install'
-	mvn clean install
+	mvnc.sh clean install
 
 eclipse:
 	@echo 'Build: Eclipse projects'
-	@mvn clean package eclipse:eclipse -D eclipse.pde install
+	@mvnc.sh clean package eclipse:eclipse -D eclipse.pde install
 
 clean:
 	@echo 'Build: clean'
 	find . -name "*~" -print0 | xargs -0 rm -rf
-	mvn clean
+	mvnc.sh clean

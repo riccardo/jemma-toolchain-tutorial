@@ -6,17 +6,17 @@ import org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api.DemoServic
 public class DemoServiceImpl implements DemoService{
 	
 	protected void activate() {
-		System.out.print("Activating DemoService");
+		System.out.println("Activating DemoService");
 	}
 	
 	protected void deactivate() {
-		System.out.print("Deactivating DemoService");
+		System.out.println("Deactivating DemoService");
 	}
 
 	@Override
 	public double getEnergyConsumption() {
 		double ret = 3.14;
-		System.out.print("getEnergyConsumption called, returning: " + ret);
+		System.out.println("getEnergyConsumption called, returning: " + ret);
 		return ret;
 	}
 
