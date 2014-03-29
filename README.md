@@ -4,7 +4,7 @@ Step-by-step tutorial covering the main aspects and key choices of the maven-bas
 
 ## Contents
 
- - [Step 0: Overall project structure and main commands](wiki/Step-00)
+ - [Step 0: Overall project structure and main commands](../../wiki/Step-00)
 
 ## TODO List
 
