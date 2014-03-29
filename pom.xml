@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.energy-home.jemma</groupId>
+	<artifactId>org.energy-home.jemma.jemma-toolchain-tutorial</artifactId>
+	<packaging>pom</packaging> 
+	<version>0.0.1</version>
+	<name>jemma-toolchain-tutorial</name>
+
+	<properties>
+		<!--General build properties-->
+		<main.dir>${project.basedir}</main.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!--Maven plugin versions-->
+		<org.apache.felix.maven-bundle-plugin.version>2.4.0</org.apache.felix.maven-bundle-plugin.version>
+		<org.apache.maven.plugins.maven-clean-plugin.version>2.5</org.apache.maven.plugins.maven-clean-plugin.version>
+		<org.apache.maven.plugins.maven-compiler-plugin.version>3.1</org.apache.maven.plugins.maven-compiler-plugin.version>
+		<org.apache.maven.plugins.maven-assembly-plugin.version>2.4</org.apache.maven.plugins.maven-assembly-plugin.version>
+
+		<!--Dependencies versions-->
+		<org.eclipse.osgi.version>3.8.0.v20120529-1548</org.eclipse.osgi.version>
+		<org.eclipse.osgi.util.version>3.2.100.v20100503</org.eclipse.osgi.util.version>
+		<org.osgi.core.version>5.0.0</org.osgi.core.version>
+		<org.osgi.compendium.version>5.0.0</org.osgi.compendium.version>
+		<org.eclipse.equinox.console.version>1.0.0.v20120430-1356</org.eclipse.equinox.console.version>
+		<org.apache.felix.gogo.shell.version>0.10.0</org.apache.felix.gogo.shell.version>
+		<org.apache.felix.gogo.runtime.version>0.12.0</org.apache.felix.gogo.runtime.version>
+	</properties>
+
+	<modules>
+		<module>jemma-toolchain-tutorial.demoservice</module>
+		<module>jemma-toolchain-tutorial.Distribution</module>
+	</modules>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>OSGI-INF/**</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>./src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+			    <groupId>org.apache.felix</groupId>
+			    <artifactId>maven-bundle-plugin</artifactId>
+			    <version>${org.apache.felix.maven-bundle-plugin.version}</version>
+			    <extensions>true</extensions>
+			    <configuration>
+				<supportedProjectTypes>
+				      <supportedProjectType>jar</supportedProjectType>
+				      <supportedProjectType>bundle</supportedProjectType>
+				      <supportedProjectType>war</supportedProjectType>
+			        </supportedProjectTypes>
+				<manifestLocation>META-INF</manifestLocation>
+				<instructions>
+				    <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+				    <Bundle-ClassPath>{maven-dependencies}</Bundle-ClassPath>
+				</instructions>
+			    </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-compiler-plugin.version}</version>
+				<configuration>
+				    <source>1.6</source>
+				    <target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-assembly-plugin.version}</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/assemble/bin.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-clean-plugin.version}</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${project.basedir}</directory>
+							<includes>
+								<include>.settings/</include>
+								<include>.project</include>
+								<include>.classpath</include>
+								<include>bin/</include>
+								<include>META-INF/</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+					<verbose>true</verbose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository> <!-- for org.eclipse.equinox.console -->
+		    <id>com.springsource.repository.bundles.external</id>
+		    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+		    <url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+			<version>${org.eclipse.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi.util</artifactId>
+			<version>${org.eclipse.osgi.util.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.eclipse.osgi</groupId>
+		    <artifactId>org.eclipse.equinox.console</artifactId>
+		    <version>${org.eclipse.equinox.console.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.felix</groupId>
+		    <artifactId>org.apache.felix.gogo.shell</artifactId>
+		    <version>${org.apache.felix.gogo.shell.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.felix</groupId>
+		    <artifactId>org.apache.felix.gogo.runtime</artifactId>
+		    <version>${org.apache.felix.gogo.runtime.version}</version>
+		</dependency>
+	</dependencies>
+</project>
+

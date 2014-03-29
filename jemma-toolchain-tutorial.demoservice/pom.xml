@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Test
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.energy-home.jemma</groupId>
+	<artifactId>org.energy-home.jemma.jemma-toolchain-tutorial.demoservice</artifactId>
+	<packaging>bundle</packaging>
+	<version>0.0.1</version>
+	<name>JEMMA toolchain tutorial demoservice</name>
+
+	<parent>
+		<groupId>org.energy-home.jemma</groupId>
+		<artifactId>org.energy-home.jemma.jemma-toolchain-tutorial</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	<properties>
+		<main.dir>${project.parent.basedir}</main.dir>
+	</properties>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+						<Bundle-Name>${project.name}</Bundle-Name>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Bundle-Vendor>JEMMA Development Team</Bundle-Vendor>
+						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
+						<Bundle-Activator>org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.activator.Activator</Bundle-Activator>
+						<Import-Package>org.osgi.framework,
+						org.osgi.service.component,*
+						</Import-Package>
+						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api
+						</Export-Package>
+						<Service-Component>OSGI-INF/*.xml</Service-Component>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+		    <groupId>org.osgi</groupId>
+		    <artifactId>org.osgi.core</artifactId>
+		    <version>${org.osgi.core.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.osgi</groupId>
+		    <artifactId>org.osgi.compendium</artifactId>
+		    <version>${org.osgi.compendium.version}</version>
+		</dependency>
+	</dependencies>
+</project>
+
