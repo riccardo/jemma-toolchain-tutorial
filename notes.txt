@@ -1,0 +1,122 @@
+Interesting also:
+
+http://wiki.eclipse.org/Jetty/Feature/Jetty_OSGi
+
+
+
+
+
+
+
+
+
+
+# equinox.http <= http servlet 2.1
+#install ftp://ftp.osuosl.org/pub/eclipse/equinox/drops/R-3.7.2-201202080800/org.eclipse.equinox.http_1.0.500.v20110413.jar
+#install ftp://ftp.osuosl.org/pub/eclipse/tools/orbit/downloads/drops/R20130517111416/repository/plugins/javax.servlet_2.4.0.v200806031604.jar
+
+# equinox.jetty <= http server 2.4
+
+install ftp://ftp.osuosl.org/pub/eclipse/releases/juno/201303010900/plugins/javax.servlet_3.0.0.v201112011016.jar
+
+# webconsole
+install ftp://ftp.osuosl.org/pub/apache/felix/org.apache.felix.webconsole-4.2.0.jar
+
+## Optionally
+
+# webconsole plugins
+install ftp://ftp.osuosl.org/pub/apache/felix/org.apache.felix.webconsole.plugins.ds-1.0.0.jar
+install ftp://ftp.osuosl.org/pub/apache/felix/org.apache.felix.webconsole.plugins.memoryusage-1.0.4.jar
+install ftp://ftp.osuosl.org/pub/apache/felix/org.apache.felix.webconsole.plugins.event-1.0.2.jar
+
+# xray plugin (http://softwaresimplexity.blogspot.de/2012/05/x-rays-for-osgi.html) (http://repo.jpm4j.org/#!/p/sha/b9cd47a5ad2f3abd4e9d89dffa65772c3674c042//0.0.0)
+install ftp://ftp.osuosl.org/pub/eclipse/tools/orbit/downloads/drops/R20130827064939/repository/plugins/org.json_1.0.0.v201011060100.jar
+install http://repo.jpm4j.org/rest/bundle/51C83986E4B06EF1574B84F7/d213fd63f68c9e10deac51e3cda1a6ac43b44834
+install http://repo.jpm4j.org/rest/bundle/51C83986E4B06EF1574B84F7/b9cd47a5ad2f3abd4e9d89dffa65772c3674c042
+
+## Finally
+# Go to: http://admin:admin@localhost:9980/system/console/bundles
+
+By: Markus Alexander Kuppe | 2013/05/24 | eclipse | Trackback | Comments [RSS 2.0]
+2 Responses to Quick’n'dirty Apache Felix webconsole on (recent) Equinox	 »»
+
+
+Comments
+
+wim
+Comment by wim | 2013/05/30 at 10:32:14
+Cool! Thanks! I have blogged about this as well a while ago for embedding this inside Eclipse IDE[1]. What happens if you restart your equinox, does it require the same steps again?
+
+Thanks for pointing out the additional plugins.
+
+[1] http://industrial-tsi-wim.blogspot.nl/2012/12/running-apache-felix-webconsole-from.html
+
+Markus Alexander Kuppe
+Comment by Markus Alexander Kuppe | 2013/05/30 at 15:02:36
+Hi Wim,
+
+it depends if you restart equinox with or without the clean parameter.
+
+PS: The links have been updated to point to Juno (stable links compared to Kepler)
+
+
+Leave a Reply »»
+
+ Name
+
+ Email
+
+ Website
+
+
+
+
+
+Comment Preview
+RSS tweets
+
+[20:45:49] If you are a wifi repeater, you should repeat multicast packages too. Don't act like a router.
+[13:09:27] frank_rieger: Pro-Trip: Mit o2 alles nur schriftlich. Wir hatten nach Options-K?ndigung einen neuen DSL-Vertrag an der Backe.
+[10:10:47] @heiseonline Kann die c't Magazin App die gekauften Ausgaben auch (nach PDF) exportieren, um am PC gelesen zu werden?
+RSS likes
+
+Kommentar: Warum ich mir noch nie ein Smartphone gekauft habe
+Entwickler finden Backdoor in Samsung-Geräten
+Are Comments Always Wrong?
+links
+
+404
+Bitbucket
+CodePlex
+coderbits
+Github
+Ohloh
+Twitter
+Popular Posts
+
+Free and paid for Raspberry Pi hosting/colocation
+SWTError: No more handles [gtk_init_check() failed] running platform tests (on Linux)
+Network bonding (wlan & eth) on linux ubuntu
+Apache Felix HTTP whiteboard pattern on Equinox
+Viewers and 1:n associations with the EMF databinding
+Real word scale greenhouse (temperature)
+Monitor AVM fritz box 7390 with Munin
+Programatically push configuration into OSGi ConfigurationAdmin
+LyX export to markdown
+publications
+categories
+
+eclipse
+life
+studies
+uncategorized
+work
+Meta
+
+Log in
+Entries RSS
+Comments RSS
+WordPress.org
+ copyright ©  2014 by l e m m s t e r . d e 
+
+Creative Commons License
