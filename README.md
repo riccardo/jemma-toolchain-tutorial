@@ -17,6 +17,7 @@ Step-by-step tutorial covering the main aspects and key choices of the maven-bas
 - add some unit test
 - add some integration test
 - expose a rest service with GSON
+- increase version of jetty and webconsole
 
 
 

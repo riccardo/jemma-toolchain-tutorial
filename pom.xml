@@ -137,6 +137,11 @@
 		   <id>EclipseLink</id>
 		   <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
 		</repository>
+		<repository>
+			<id>localRepository</id>
+			<name>Local repository</name>
+			<url>http://130.192.85.149:8888/maven</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -176,63 +181,91 @@
 		</dependency>
 
 		<!--For webconsole-->
-
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet</artifactId>
+			<version>2.5.0</version>
+		</dependency>	
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.webconsole</artifactId>
-			<version>4.2.2</version>
+			<version>3.1.8</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.2.1</version>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.webconsole.plugins.event</artifactId>
+			<version>1.0.2</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.webconsole.plugins.memoryusage</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.webconsole.plugins.upnp</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>org.apache.commons.io</artifactId>
 			<version>1.4</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.4</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>org.apache.commons.fileupload</artifactId>
+			<version>1.2.2</version>
 		</dependency>
 		<dependency>
-			<groupId>de.twentyeleven.skysail</groupId>
-			<artifactId>org.json-osgi</artifactId>
-			<version>20080701</version>
-		</dependency>
-			    
-		<dependency>
-			<groupId>org.eclipse.jetty.orbit</groupId>
-			<artifactId>javax.servlet</artifactId>
-			<version>3.0.0.v201112011016</version>
+			<groupId>org.json</groupId>
+			<artifactId>org.json.simple</artifactId>
+			<version>1.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.jetty.orbit</groupId>
-			<artifactId>javax.servlet</artifactId>
-			<version>2.5.0.v201103041518</version>
+			<groupId>org.json</groupId>
+			<artifactId>org.json</artifactId>
+			<version>1.0.0</version>
+		</dependency>     
+		<dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>org.mortbay.jetty.server</artifactId>
+			<version>6.1.23</version>			
 		</dependency>
-                        
-       		<!--For Jetty-->
-<dependency>
-	<groupId>org.eclipse.jetty.osgi</groupId>
-	<artifactId>jetty-osgi-boot</artifactId>
-	<version>9.1.3.v20140225</version>
-</dependency>
-<dependency>
-	<groupId>org.eclipse.jetty.osgi</groupId>
-	<artifactId>jetty-httpservice</artifactId>
-	<version>9.1.3.v20140225</version>
-</dependency>
-<dependency>
-	<groupId>org.eclipse.jetty.osgi</groupId>
-	<artifactId>test-jetty-osgi-webapp</artifactId>
-	<version>9.0.7.v20131107</version>
-</dependency>
-                      
-            
-                                                                           
+		<dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>org.mortbay.jetty.util</artifactId>
+			<version>6.1.23</version>			
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.http.servletbridge</artifactId>
+			<version>1.1.100</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.registry</artifactId>
+			<version>3.4.100</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.http.jetty</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.http.registry</artifactId>
+			<version>1.0.200</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.http.servlet</artifactId>
+			<version>1.0.200</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.common</artifactId>
+			<version>3.5.1</version>
+		</dependency>                 
 	</dependencies>
 </project>
 
