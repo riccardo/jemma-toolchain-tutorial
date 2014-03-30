@@ -7,6 +7,7 @@ Step-by-step tutorial covering the main aspects and key choices of the maven-bas
 - [Step 0: Overall project structure and main commands](../../wiki/Step-00)
 - [Step 1: Providing declarative services](../../wiki/Step-01)
 - [Step 2: Consuming declarative services](../../wiki/Step-02)
+- [Step 3: Adding the Web Console](../../wiki/Step-03)
 
 
 ## TODO List
