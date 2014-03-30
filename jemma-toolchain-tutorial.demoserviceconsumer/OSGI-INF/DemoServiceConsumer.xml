@@ -2,4 +2,8 @@
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer">
    <implementation class="org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.impl.DemoServiceConsumerImpl"/>
    <reference bind="bindDemoService" cardinality="1..1" interface="org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api.DemoService" name="DemoService" policy="static" unbind="unbindDemoService"/>
+   <property name="periodicity_ms" type="Long" value="1000"/>
+   <service>
+      <provide interface="org.osgi.service.cm.ManagedService"/>
+   </service>
 </scr:component>

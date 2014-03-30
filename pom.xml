@@ -265,7 +265,14 @@
 			<groupId>org.eclipse.equinox</groupId>
 			<artifactId>org.eclipse.equinox.common</artifactId>
 			<version>3.5.1</version>
-		</dependency>                 
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.configadmin</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+            
+                 
 	</dependencies>
 </project>
 
