@@ -1,8 +1,10 @@
 Interesting also:
 
 http://wiki.eclipse.org/Jetty/Feature/Jetty_OSGi
+http://mvnrepository.com/artifact/org.eclipse.jetty.osgi
 
 
+-Dorg.osgi.service.http.port=8080
 
 
 
