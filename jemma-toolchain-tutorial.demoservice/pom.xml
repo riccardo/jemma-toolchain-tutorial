@@ -36,7 +36,8 @@
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
 						<Bundle-Activator>org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.activator.Activator</Bundle-Activator>
 						<Import-Package>org.osgi.framework,
-						org.osgi.service.component,*
+						org.osgi.service.component,
+						org.osgi.service.cm,*
 						</Import-Package>
 						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api
 						</Export-Package>

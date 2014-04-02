@@ -9,12 +9,11 @@ Step-by-step tutorial covering the main aspects and key choices of the maven-bas
 - [Step 2: Consuming declarative services](../../wiki/Step-02)
 - [Step 3: Adding the Web Console](../../wiki/Step-03)
 - [Step 4: Configuration Admin](../../wiki/Step-04)
+- [Step 5: Adding logging with pax-logging and slf4j](../../wiki/Step-05)
 
 
 ## TODO List
 
-- add configuration admin and some managed configuration parameters
-- add pax-logging with Slf4j
 - add some unit test
 - add some integration test
 - expose a rest service with GSON

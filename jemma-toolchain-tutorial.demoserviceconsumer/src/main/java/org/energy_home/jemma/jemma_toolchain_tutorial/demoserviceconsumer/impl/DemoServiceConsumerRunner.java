@@ -57,4 +57,9 @@ public class DemoServiceConsumerRunner implements Runnable{
 		
 	}
 
+	public void setPeriodicity(long periodicity_ms) {
+		this.periodicity_ms=periodicity_ms;
+		
+	}
+
 }

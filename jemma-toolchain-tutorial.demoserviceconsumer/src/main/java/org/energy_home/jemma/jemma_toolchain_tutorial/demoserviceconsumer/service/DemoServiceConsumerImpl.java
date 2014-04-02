@@ -1,10 +1,11 @@
-package org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.impl;
+package org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.service;
 
 import java.io.IOException;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
 import org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api.DemoService;
+import org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.impl.DemoServiceConsumerRunner;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
@@ -12,47 +13,66 @@ import org.osgi.service.cm.Configuration;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.cm.ConfigurationException;
 import org.osgi.service.cm.ManagedService;
-import org.osgi.service.component.ComponentContext;
 
-
-public class DemoServiceImpl implements DemoService, ManagedService{
+public class DemoServiceConsumerImpl implements ManagedService{
+	protected long periodicity_ms=1000;
+	private DemoService demoservice;
+	private DemoServiceConsumerRunner runner;
 	
-	private double energy_consumption=0;
-
 	protected void activate() {
-		System.out.println("Activating DemoService");
-	}
-	
-	protected void deactivate() {
-		System.out.println("Deactivating DemoService");
+		System.out.println("Activating DemoConsumerService");
+		
+		//configure(context.getProperties());
+		//System.out.println("Config on load: [periodicity_ms="+periodicity_ms+"]");
+		
+		this.runner = new DemoServiceConsumerRunner(this.periodicity_ms,this.demoservice);
+		Thread r = new Thread(this.runner);
+		r.start();
+		
 	}
 
-	@Override
-	public double getEnergyConsumption() {
-		System.out.println("getEnergyConsumption called, returning: " + this.energy_consumption);
-		return this.energy_consumption;
+	protected void deactivate() {
+		System.out.println("Deactivating DemoConsumerService");
+		this.runner.stop();
+	}
+
+
+	public void bindDemoService(DemoService d) {
+		System.out.println("Binding DemoService " + d);
+		this.demoservice=d;
+	}
+	
+	public void unbindDemoService(DemoService d) {
+		System.out.println("Unbinding DemoService " + d);
+		this.demoservice=null;
 	}
 
 	@Override
 	public void updated(Dictionary<String, ?> props)
 			throws ConfigurationException {
-	
+		
+		//inspired from http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html
+		
         if (props == null) {
             // no configuration from configuration admin
             // or old configuration has been deleted
-        	System.out.println("creating configuration");
+        	System.out.println("no conf TBD");
         	this.createDefaultConfiguration();
-
+        	//System.exit(0);
         } else {
             // apply configuration from config admin
-        	System.out.println("conf available in DemoService");
-        	String tmp_energy_consumption = (String) props.get("energy_consumption");
-        	this.energy_consumption=Double.parseDouble(tmp_energy_consumption);
-        	System.out.println("energy_consumption updated to " + this.energy_consumption);
+        	System.out.println("conf available in DemoServiceConsumer");
+        	String tmp_periodicity_ms = (String) props.get("periodicity_ms");
+        	this.periodicity_ms=Long.parseLong(tmp_periodicity_ms);
+        	System.out.println("periodicity_ms updated to " + this.periodicity_ms);
+        	this.runner.setPeriodicity(this.periodicity_ms);
         }
+        
+        
+        
 		
 	}
-
+	
 	private void createDefaultConfiguration() {
 		//from http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html
 		//thanks http://stackoverflow.com/questions/6527306/best-technique-for-getting-the-osgi-bundle-context
@@ -65,7 +85,7 @@ public class DemoServiceImpl implements DemoService, ManagedService{
             //FIXME maybe the PID can be taken from the DS properties ?
             Configuration config = null;
 			try {
-				config = confAdmin.getConfiguration("org.energy_home.jemma.jemma_toolchain_tutorial.demoservice");
+				config = confAdmin.getConfiguration("org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -78,7 +98,7 @@ public class DemoServiceImpl implements DemoService, ManagedService{
             	}
 
             	// set some properties
-            	props.put("energy_consumption", "10");
+            	props.put("periodicity_ms", "1024");
 
             	// update the configuration
             	try {
@@ -93,4 +113,9 @@ public class DemoServiceImpl implements DemoService, ManagedService{
 
 
 
+	
+	
+	
+	
+	
 }

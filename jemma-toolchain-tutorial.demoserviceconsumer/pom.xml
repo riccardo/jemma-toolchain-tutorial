@@ -37,9 +37,11 @@
 						<Bundle-Activator>org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.activator.Activator</Bundle-Activator>
 						<Import-Package>org.osgi.framework,
 						org.osgi.service.component,
-						org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api,
 						org.osgi.service.cm,*
 						</Import-Package>
+						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.activator,
+						org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.service
+						</Export-Package>
 						<Service-Component>OSGI-INF/*.xml</Service-Component>
 					</instructions>
 				</configuration>
