@@ -1,16 +1,19 @@
 package org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.impl;
 
 import org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api.DemoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DemoServiceConsumerRunner implements Runnable{
 
 	private long periodicity_ms;
 	private boolean active;
 	private DemoService demoservice;
+	private static final Logger LOG = LoggerFactory.getLogger( DemoServiceConsumerRunner.class );
 
 	public DemoServiceConsumerRunner(long periodicity_ms,
 			DemoService demoservice) {
-		System.out.println("DemoServiceConsumerRunner constructor");
+		LOG.debug("DemoServiceConsumerRunner constructor");
 		this.periodicity_ms=periodicity_ms;
 		this.active=true;
 		this.demoservice=demoservice;
@@ -18,13 +21,13 @@ public class DemoServiceConsumerRunner implements Runnable{
 
 	@Override
 	public void run() {
-		System.out.println("DemoServiceConsumerRunner constructor [periodicity_ms="+this.periodicity_ms+"]");
+		LOG.debug("DemoServiceConsumerRunner run startingS [periodicity_ms="+this.periodicity_ms+"]");
 		
 		while(this.active) {
 			
 			this.action();
 			
-			System.out.println("DemoServiceConsumerRunner going to sleep for [periodicity_ms="+this.periodicity_ms+"]");
+			LOG.trace("DemoServiceConsumerRunner going to sleep for [periodicity_ms="+this.periodicity_ms+"]");
 			
 			try {
 				Thread.sleep(this.periodicity_ms);
@@ -35,24 +38,24 @@ public class DemoServiceConsumerRunner implements Runnable{
 			
 		}
 		
-		System.out.println("DemoServiceConsumerRunner greceful ending");
+		LOG.debug("DemoServiceConsumerRunner greceful ending");
 		
 	}
 
 	private void action() {
-		System.out.println("*** DemoServiceConsumerRunner action! *** ");
+		LOG.trace("*** DemoServiceConsumerRunner action! *** ");
 		if(this.demoservice!=null) {
 			double ret = this.demoservice.getEnergyConsumption();
-			System.out.println("DemoServiceConsumerRunner getEnergyConsumption = " + ret);
+			LOG.trace("DemoServiceConsumerRunner getEnergyConsumption = " + ret);
 		} else {
-			System.out.println("DemoServiceConsumerRunner null! ");
+			LOG.warn("DemoServiceConsumerRunner null! ");
 			
 		}
 		
 	}
 
 	public void stop() {
-		System.out.println("DemoServiceConsumerRunner greceful stop");
+		LOG.debug("DemoServiceConsumerRunner greceful stop");
 		this.active=false;
 		
 	}

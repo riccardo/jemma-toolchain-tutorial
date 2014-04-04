@@ -12,24 +12,29 @@ import org.osgi.service.cm.Configuration;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.cm.ConfigurationException;
 import org.osgi.service.cm.ManagedService;
-import org.osgi.service.component.ComponentContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class DemoServiceImpl implements DemoService, ManagedService{
 	
+	private static final Logger LOG = LoggerFactory.getLogger( DemoServiceImpl.class );
+
+	private static final double DEFAULT_ENERGY_CONSUMPTION = 10;
+	
 	private double energy_consumption=0;
 
 	protected void activate() {
-		System.out.println("Activating DemoService");
+		LOG.debug("Activating DemoService");
 	}
 	
 	protected void deactivate() {
-		System.out.println("Deactivating DemoService");
+		LOG.debug("Deactivating DemoService");
 	}
 
 	@Override
 	public double getEnergyConsumption() {
-		System.out.println("getEnergyConsumption called, returning: " + this.energy_consumption);
+		LOG.info("getEnergyConsumption called, returning: " + this.energy_consumption);
 		return this.energy_consumption;
 	}
 
@@ -40,15 +45,15 @@ public class DemoServiceImpl implements DemoService, ManagedService{
         if (props == null) {
             // no configuration from configuration admin
             // or old configuration has been deleted
-        	System.out.println("creating configuration");
+        	LOG.debug("Configuration not available: creating default configuration");
         	this.createDefaultConfiguration();
 
         } else {
             // apply configuration from config admin
-        	System.out.println("conf available in DemoService");
-        	String tmp_energy_consumption = (String) props.get("energy_consumption");
-        	this.energy_consumption=Double.parseDouble(tmp_energy_consumption);
-        	System.out.println("energy_consumption updated to " + this.energy_consumption);
+        	LOG.debug("Configuration changed or made available by ConfigAdmin: loading");
+        	double tmp_energy_consumption =  (Double) props.get("energy_consumption");
+        	this.energy_consumption=tmp_energy_consumption;
+        	LOG.trace("this.energy_consumption set to:",this.energy_consumption);
         }
 		
 	}
@@ -78,7 +83,9 @@ public class DemoServiceImpl implements DemoService, ManagedService{
             	}
 
             	// set some properties
-            	props.put("energy_consumption", "10");
+            	LOG.trace("setting this.energy_consumption set to default:",DemoServiceImpl.DEFAULT_ENERGY_CONSUMPTION);
+            	props.put("energy_consumption", this.DEFAULT_ENERGY_CONSUMPTION);
+            	this.energy_consumption=DemoServiceImpl.DEFAULT_ENERGY_CONSUMPTION;
 
             	// update the configuration
             	try {

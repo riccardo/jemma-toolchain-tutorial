@@ -37,7 +37,8 @@
 						<Bundle-Activator>org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.activator.Activator</Bundle-Activator>
 						<Import-Package>org.osgi.framework,
 						org.osgi.service.component,
-						org.osgi.service.cm,*
+						org.osgi.service.cm,
+						org.slf4j,*
 						</Import-Package>
 						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.activator,
 						org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.service
@@ -65,6 +66,11 @@
 		    <groupId>org.energy-home.jemma</groupId>
 		    <artifactId>org.energy-home.jemma.jemma-toolchain-tutorial.demoservice</artifactId>
 		    <version>${org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${org.slf4j.version}</version>
 		</dependency>
 	</dependencies>
 </project>

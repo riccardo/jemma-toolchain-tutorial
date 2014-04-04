@@ -13,17 +13,20 @@ import org.osgi.service.cm.Configuration;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.cm.ConfigurationException;
 import org.osgi.service.cm.ManagedService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DemoServiceConsumerImpl implements ManagedService{
-	protected long periodicity_ms=1000;
+	
 	private DemoService demoservice;
 	private DemoServiceConsumerRunner runner;
+	private static final Logger LOG = LoggerFactory.getLogger( DemoServiceConsumerImpl.class );
+	private static final long DEFAULT_PERIODICITY_MS = 1024;
+	protected long periodicity_ms=DEFAULT_PERIODICITY_MS;
 	
 	protected void activate() {
-		System.out.println("Activating DemoConsumerService");
-		
-		//configure(context.getProperties());
-		//System.out.println("Config on load: [periodicity_ms="+periodicity_ms+"]");
+		LOG.debug("Activating DemoConsumerService");
+
 		
 		this.runner = new DemoServiceConsumerRunner(this.periodicity_ms,this.demoservice);
 		Thread r = new Thread(this.runner);
@@ -32,18 +35,18 @@ public class DemoServiceConsumerImpl implements ManagedService{
 	}
 
 	protected void deactivate() {
-		System.out.println("Deactivating DemoConsumerService");
+		LOG.debug("Deactivating DemoConsumerService");
 		this.runner.stop();
 	}
 
 
 	public void bindDemoService(DemoService d) {
-		System.out.println("Binding DemoService " + d);
+		LOG.trace("Binding DemoService " + d);
 		this.demoservice=d;
 	}
 	
 	public void unbindDemoService(DemoService d) {
-		System.out.println("Unbinding DemoService " + d);
+		LOG.trace("Unbinding DemoService " + d);
 		this.demoservice=null;
 	}
 
@@ -56,15 +59,16 @@ public class DemoServiceConsumerImpl implements ManagedService{
         if (props == null) {
             // no configuration from configuration admin
             // or old configuration has been deleted
-        	System.out.println("no conf TBD");
+        	LOG.debug("Configuration not available: creating default configuration");
         	this.createDefaultConfiguration();
         	//System.exit(0);
         } else {
             // apply configuration from config admin
-        	System.out.println("conf available in DemoServiceConsumer");
-        	String tmp_periodicity_ms = (String) props.get("periodicity_ms");
-        	this.periodicity_ms=Long.parseLong(tmp_periodicity_ms);
-        	System.out.println("periodicity_ms updated to " + this.periodicity_ms);
+        	LOG.debug("Configuration changed or made available by ConfigAdmin: loading");
+        	long tmp_periodicity_ms = (Long) props.get("periodicity_ms");
+        	//this.periodicity_ms=Long.parseLong(tmp_periodicity_ms);
+        	this.periodicity_ms=tmp_periodicity_ms;
+        	LOG.trace("this.periodicity_ms set to:",this.periodicity_ms);
         	this.runner.setPeriodicity(this.periodicity_ms);
         }
         
@@ -98,7 +102,10 @@ public class DemoServiceConsumerImpl implements ManagedService{
             	}
 
             	// set some properties
-            	props.put("periodicity_ms", "1024");
+            	LOG.trace("setting this.periodicity_ms set to default:",this.DEFAULT_PERIODICITY_MS);
+            	this.periodicity_ms=this.DEFAULT_PERIODICITY_MS;
+            	props.put("periodicity_ms", this.periodicity_ms);
+            	
 
             	// update the configuration
             	try {
