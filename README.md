@@ -11,12 +11,12 @@ Step-by-step tutorial covering the main aspects and key choices of the maven-bas
 - [Step 4: Configuration Admin](../../wiki/Step-04)
 - [Step 5: Adding logging with pax-logging and slf4j](../../wiki/Step-05)
 - [Step 6: Adding some unit tests](../../wiki/Step-06)
-- [Step 7: Adding some integration tests](../../wiki/Step-07)
+- [Step 7: Expose a rest service](../../wiki/Step-07)
 
 
 ## TODO List
 
-- expose a rest service with GSON
+- 
 - increase version of jetty and webconsole
 
 
