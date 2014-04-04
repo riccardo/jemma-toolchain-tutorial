@@ -65,9 +65,8 @@ public class DemoServiceConsumerImpl implements ManagedService{
         } else {
             // apply configuration from config admin
         	LOG.debug("Configuration changed or made available by ConfigAdmin: loading");
-        	long tmp_periodicity_ms = (Long) props.get("periodicity_ms");
-        	//this.periodicity_ms=Long.parseLong(tmp_periodicity_ms);
-        	this.periodicity_ms=tmp_periodicity_ms;
+        	String tmp_periodicity_ms = (String) props.get("periodicity_ms");
+        	this.periodicity_ms=Long.parseLong(tmp_periodicity_ms);
         	LOG.trace("this.periodicity_ms set to:",this.periodicity_ms);
         	this.runner.setPeriodicity(this.periodicity_ms);
         }
@@ -104,7 +103,7 @@ public class DemoServiceConsumerImpl implements ManagedService{
             	// set some properties
             	LOG.trace("setting this.periodicity_ms set to default:",this.DEFAULT_PERIODICITY_MS);
             	this.periodicity_ms=this.DEFAULT_PERIODICITY_MS;
-            	props.put("periodicity_ms", this.periodicity_ms);
+            	props.put("periodicity_ms", this.periodicity_ms+"");
             	
 
             	// update the configuration

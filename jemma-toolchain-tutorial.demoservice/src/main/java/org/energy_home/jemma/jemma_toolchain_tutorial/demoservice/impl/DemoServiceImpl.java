@@ -51,8 +51,8 @@ public class DemoServiceImpl implements DemoService, ManagedService{
         } else {
             // apply configuration from config admin
         	LOG.debug("Configuration changed or made available by ConfigAdmin: loading");
-        	double tmp_energy_consumption =  (Double) props.get("energy_consumption");
-        	this.energy_consumption=tmp_energy_consumption;
+        	String tmp_energy_consumption =  (String) props.get("energy_consumption");
+        	this.energy_consumption=Double.parseDouble(tmp_energy_consumption);
         	LOG.trace("this.energy_consumption set to:",this.energy_consumption);
         }
 		
@@ -84,7 +84,7 @@ public class DemoServiceImpl implements DemoService, ManagedService{
 
             	// set some properties
             	LOG.trace("setting this.energy_consumption set to default:",DemoServiceImpl.DEFAULT_ENERGY_CONSUMPTION);
-            	props.put("energy_consumption", this.DEFAULT_ENERGY_CONSUMPTION);
+            	props.put("energy_consumption", this.DEFAULT_ENERGY_CONSUMPTION+"");
             	this.energy_consumption=DemoServiceImpl.DEFAULT_ENERGY_CONSUMPTION;
 
             	// update the configuration
