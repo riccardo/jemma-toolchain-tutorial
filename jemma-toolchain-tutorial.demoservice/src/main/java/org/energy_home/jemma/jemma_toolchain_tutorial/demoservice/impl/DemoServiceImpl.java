@@ -22,7 +22,7 @@ public class DemoServiceImpl implements DemoService, ManagedService{
 
 	private static final double DEFAULT_ENERGY_CONSUMPTION = 10;
 	
-	private double energy_consumption=0;
+	private double energy_consumption=DEFAULT_ENERGY_CONSUMPTION;
 
 	protected void activate() {
 		LOG.debug("Activating DemoService");

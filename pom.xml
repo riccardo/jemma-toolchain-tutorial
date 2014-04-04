@@ -30,6 +30,7 @@
 		<org.apache.felix.gogo.runtime.version>0.12.0</org.apache.felix.gogo.runtime.version>
 		<org.apache.felix.gogo.command.version>0.12.0</org.apache.felix.gogo.command.version>
 		<org.slf4j.version>1.7.6</org.slf4j.version>
+		<org.junit.version>4.11</org.junit.version>
 
 		<!--Our bunldes versions-->
 		<org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>
