@@ -16,7 +16,6 @@ Step-by-step tutorial covering the main aspects and key choices of the maven-bas
 
 ## TODO List
 
-- 
 - increase version of jetty and webconsole
 
 
