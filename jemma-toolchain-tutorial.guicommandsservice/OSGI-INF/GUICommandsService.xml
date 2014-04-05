@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice">
+   <implementation class="org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.impl.GUICommandsServiceImpl"/>
+   <service>
+      <provide interface="org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.api.GUICommandsService"/>
+   </service>
+   <property name="service.pid" type="String" value="org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice"/>
+</scr:component>

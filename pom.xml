@@ -35,7 +35,9 @@
 		<!--Our bunldes versions-->
 		<org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>
 		<org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer.version>
+		<org.energy-home.jemma.jemma-toolchain-tutorial.guicommandsservice.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.guicommandsservice.version>
 	</properties>
+
 
 
 
@@ -43,6 +45,7 @@
 	<modules>
 		<module>jemma-toolchain-tutorial.demoservice</module>
 		<module>jemma-toolchain-tutorial.demoserviceconsumer</module>
+		<module>jemma-toolchain-tutorial.guicommandsservice</module>
 		<module>jemma-toolchain-tutorial.Distribution</module>
 	</modules>
 
