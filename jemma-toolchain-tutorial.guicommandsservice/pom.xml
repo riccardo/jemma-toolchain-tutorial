@@ -38,6 +38,7 @@
 						<Import-Package>org.osgi.framework,
 						org.osgi.service.component,
 						org.osgi.service.cm,
+					 	javax.ws.rs,
 						org.slf4j,*
 						</Import-Package>
 						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.api,
@@ -73,6 +74,42 @@
 			<version>${org.junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        <version>${cxf.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-transports-http</artifactId>
+        <version>${cxf.version}</version>
+    </dependency>
+        <!-- Jetty is needed if you're are not using the CXFServlet -->
+    <dependency>
+	<groupId>org.apache.cxf</groupId>
+	<artifactId>cxf-rt-transports-http-jetty</artifactId>
+	<version>${cxf.version}</version>
+    </dependency>
+<dependency>
+    <groupId>javax.ws.rs</groupId>
+    <artifactId>javax.ws.rs-api</artifactId>
+    <version>2.0</version>
+</dependency>
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+      <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+<dependency>
+   <groupId>org.apache.cxf</groupId>
+   <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+   <version>${cxf.version}</version>
+</dependency>
+</dependencies>
 </project>
 

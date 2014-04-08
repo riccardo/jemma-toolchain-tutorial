@@ -22,5 +22,5 @@
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="true"/>
-<stringAttribute key="workspace_bundles" value="org.energy-home.jemma.jemma-toolchain-tutorial.demoservice@default:default,org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer@default:default"/>
+<stringAttribute key="workspace_bundles" value="org.energy-home.jemma.jemma-toolchain-tutorial.demoservice@default:default,org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer@default:default,org.energy-home.jemma.jemma-toolchain-tutorial.guicommandsservice@default:default"/>
 </launchConfiguration>

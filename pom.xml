@@ -31,6 +31,7 @@
 		<org.apache.felix.gogo.command.version>0.12.0</org.apache.felix.gogo.command.version>
 		<org.slf4j.version>1.7.6</org.slf4j.version>
 		<org.junit.version>4.11</org.junit.version>
+		<cxf.version>2.7.10</cxf.version>
 
 		<!--Our bunldes versions-->
 		<org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>
@@ -297,8 +298,6 @@
 			<artifactId>org.apache.felix.configadmin</artifactId>
 			<version>1.8.0</version>
 		</dependency>
-                       
-                 
 	</dependencies>
 </project>
 
