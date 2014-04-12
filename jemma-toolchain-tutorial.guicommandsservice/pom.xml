@@ -36,8 +36,6 @@
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
 						<Bundle-Activator>org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.activator.Activator</Bundle-Activator>
 						<Import-Package>org.osgi.framework,
-						org.osgi.service.component,
-						org.osgi.service.cm,
 						org.osgi.util.tracker,
 						org.osgi.service.http,
 						javax.servlet,
@@ -108,16 +106,27 @@
     </exclusions>
 
 </dependency>
-<dependency>
-    <groupId>org.apache.cxf</groupId>
-    <artifactId>cxf-rt-transports-http-jetty</artifactId>
-    <version>${cxf.version}</version>
-</dependency>
+<!--<dependency>-->
+<!--    <groupId>org.apache.cxf</groupId>-->
+<!--    <artifactId>cxf-rt-transports-http-jetty</artifactId>-->
+<!--    <version>${cxf.version}</version>-->
+<!--</dependency>-->
 <dependency>
     <groupId>javax.ws.rs</groupId>
     <artifactId>javax.ws.rs-api</artifactId>
     <version>2.0</version>
 </dependency>
+<dependency>
+    <groupId>org.apache.servicemix.specs</groupId>
+    <artifactId>org.apache.servicemix.specs.jsr339-api-2.0</artifactId>
+    <version>2.4.0</version>
+</dependency>
+<dependency>
+    <groupId>org.osgi</groupId>
+    <artifactId>org.osgi.enterprise</artifactId>
+    <version>4.2.0</version>
+</dependency>
+
 	</dependencies>
 </project>
 

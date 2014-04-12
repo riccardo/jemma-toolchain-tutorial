@@ -17,7 +17,7 @@ public class Activator implements BundleActivator{
 	private static final Logger LOG = LoggerFactory.getLogger( Activator.class );
 	private BundleContext _context;
 	private ServiceTracker _tracker;
-	private final String _path = "/";
+	private final String _path = "/actpath";
 
 	@Override
 	public void start(BundleContext context) throws Exception {

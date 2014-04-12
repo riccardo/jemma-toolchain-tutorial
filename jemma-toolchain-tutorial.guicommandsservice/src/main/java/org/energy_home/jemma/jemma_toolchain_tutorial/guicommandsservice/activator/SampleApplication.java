@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 
 
-@ApplicationPath("/app")
+@ApplicationPath("/myapp")
 public class SampleApplication extends Application {
 
 	private static final Logger LOG = LoggerFactory.getLogger( SampleApplication.class );
@@ -21,6 +21,7 @@ public class SampleApplication extends Application {
     	LOG.debug("SampleApplication called");
         Set<Class<?>> s = new HashSet<Class<?>>();
         s.add(SampleResource.class);
+        s.add(AnotherSampleResource.class);
         LOG.debug("SampleApplication returning ",s);
         return s;
     }

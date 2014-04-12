@@ -8,12 +8,11 @@ import javax.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SampleResource {
-
-	private static final Logger LOG = LoggerFactory.getLogger( SampleResource.class );
+public class AnotherSampleResource {
+	private static final Logger LOG = LoggerFactory.getLogger( AnotherSampleResource.class );
 
     @GET
-    @Path("/respath")
+    @Path("/anotherrespath")
     @Produces(MediaType.TEXT_PLAIN)
     public String getSampleText() {
     	LOG.info("getSampleText called");
