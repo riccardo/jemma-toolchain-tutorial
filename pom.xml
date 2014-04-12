@@ -31,8 +31,10 @@
 		<org.apache.felix.gogo.command.version>0.12.0</org.apache.felix.gogo.command.version>
 		<org.slf4j.version>1.7.6</org.slf4j.version>
 		<org.junit.version>4.11</org.junit.version>
-		<cxf.version>3.0.0-milestone2</cxf.version>
+		<cxf.version>3.0.0-milestone1</cxf.version>
 		<jetty.version>8.1.14.v20131031</jetty.version>
+<!--		<jetty.version>9.1.4.v20140401</jetty.version>-->
+
 
 		<!--Our bunldes versions-->
 		<org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>0.0.1</org.energy-home.jemma.jemma-toolchain-tutorial.demoservice.version>
