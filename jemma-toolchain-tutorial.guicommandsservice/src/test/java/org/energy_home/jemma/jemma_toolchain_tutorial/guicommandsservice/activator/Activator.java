@@ -3,8 +3,8 @@ package org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.activa
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-import org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.impl.SampleApplication;
-import org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.impl.SampleServlet;
+import org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.impl.publicimpl.SampleApplication;
+import org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.impl.publicimpl.SampleServlet;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;

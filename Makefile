@@ -8,7 +8,7 @@ build:
 
 eclipse:
 	@echo 'Build: Eclipse projects'
-	@mvnc.sh clean package eclipse:eclipse -D eclipse.pde install
+	@mvnc.sh package eclipse:eclipse -D eclipse.pde install
 
 eclipse-notest:
 	@echo 'Build: Eclipse projects - no test'

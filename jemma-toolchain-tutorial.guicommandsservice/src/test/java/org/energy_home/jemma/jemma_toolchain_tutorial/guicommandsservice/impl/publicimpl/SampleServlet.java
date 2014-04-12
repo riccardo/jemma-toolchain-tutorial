@@ -1,4 +1,4 @@
-package org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.impl;
+package org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.impl.publicimpl;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
