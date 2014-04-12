@@ -38,6 +38,17 @@
 						<Import-Package>org.osgi.framework,
 						org.osgi.service.component,
 						org.osgi.service.cm,
+						org.osgi.util.tracker,
+						org.osgi.service.http,
+						javax.servlet,
+						javax.ws.rs,
+						javax.ws.rs.core,
+						org.apache.cxf,
+						org.apache.cxf.bus,
+						org.apache.cxf.jaxrs,
+						org.apache.cxf.jaxrs.servlet,
+						org.apache.cxf.transport,
+						org.apache.cxf.transport.servlet,
 						org.slf4j,*
 						</Import-Package>
 						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.api,
