@@ -12,7 +12,7 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Activator implements BundleActivator{
+public class Activator implements org.osgi.framework.BundleActivator{
 	
 	private static final Logger LOG = LoggerFactory.getLogger( Activator.class );
 	private BundleContext _context;

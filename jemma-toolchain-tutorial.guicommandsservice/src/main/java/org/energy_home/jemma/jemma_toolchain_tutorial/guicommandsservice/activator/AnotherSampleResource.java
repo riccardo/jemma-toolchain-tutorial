@@ -13,10 +13,18 @@ public class AnotherSampleResource {
 
     @GET
     @Path("/anotherrespath")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getSampleText() {
+    @Produces(MediaType.APPLICATION_JSON)
+    public AnObject getSampleText() {
     	LOG.info("getSampleText called");
-        return "My Sample Text";
+        return new AnObject();
+    }
+    
+    public class AnObject {
+    	public String avalue="foo";
+    	public String bvalue="bar";
+    	public int ivalue=5;
+    	
+    	
     }
 
 }
