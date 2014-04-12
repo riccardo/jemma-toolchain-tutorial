@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" enabled="true" immediate="true" name="org.energy-home.jemma.jemma-toolchain-tutorial.demoserviceconsumer">
    <implementation class="org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.service.DemoServiceConsumerImpl"/>
-   <reference bind="bindDemoService" cardinality="1..1" interface="org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api.DemoService" name="DemoService" policy="static" unbind="unbindDemoService"/>
+   <reference bind="bindDemoService" cardinality="1..1" interface="org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api.DemoService" name="DemoService" policy="dynamic" unbind="unbindDemoService"/>
    <service>
       <provide interface="org.osgi.service.cm.ManagedService"/>
    </service>

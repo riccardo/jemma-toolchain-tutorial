@@ -73,6 +73,12 @@
 			<version>${org.junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+
+<!--For CXF Service-->
+
+
+
 	</dependencies>
 </project>
 
