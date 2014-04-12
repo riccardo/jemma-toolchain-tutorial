@@ -12,7 +12,7 @@ eclipse:
 
 eclipse-notest:
 	@echo 'Build: Eclipse projects - no test'
-	@mvnc.sh eclipse:eclipse -D eclipse.pde -DskipTests
+	@mvnc.sh clean eclipse:eclipse -D eclipse.pde -DskipTests
 
 clean:
 	@echo 'Build: clean'
