@@ -1,1 +1,6 @@
 *~
+META-INF/
+.settings/
+.classpath
+.project
+target/

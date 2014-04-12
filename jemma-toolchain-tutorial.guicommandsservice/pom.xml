@@ -38,7 +38,6 @@
 						<Import-Package>org.osgi.framework,
 						org.osgi.service.component,
 						org.osgi.service.cm,
-					 	javax.ws.rs,
 						org.slf4j,*
 						</Import-Package>
 						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.api,
@@ -75,122 +74,55 @@
 			<scope>test</scope>
 		</dependency>
 
+<!-- for rest services -->
 
-<!--        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>${cxf.version}</version>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.fileinstall</artifactId>
+            <version>3.1.10</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http</artifactId>
-            <version>${cxf.version}</version>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.http.bundle</artifactId>
+            <version>2.2.0</version>
+            <scope>compile</scope>
+            <!-- using compile instead of test so we don't need to import geronimo-servlet_3.0_spec -->
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>${cxf.version}</version>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.jsr339-api-2.0</artifactId>
+            <version>2.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-bindings-http</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-httpclient</groupId>
-            <artifactId>commons-httpclient</artifactId>
-            <version>3.1</version>
-        </dependency>
-<dependency>
-    <groupId>javax.ws.rs</groupId>
-    <artifactId>javax.ws.rs-api</artifactId>
-    <version>2.0</version>
-</dependency>
-<dependency>
-	<groupId>org.codehaus.jettison</groupId>
-	<artifactId>jettison</artifactId>
-	<version>1.3.5</version>
-</dependency>
-            
-<dependency>
-	<groupId>org.codehaus.jra</groupId>
-	<artifactId>jra</artifactId>
-	<version>1.0-alpha-4</version>
-</dependency>
-
-
-        <dependency>
-	            <groupId>org.apache.servicemix.specs</groupId>
-	            <artifactId>org.apache.servicemix.specs.jsr339-api-2.0</artifactId>
-	            <version>2.4.0</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.apache.cxf</groupId>
-	            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-	            <version>{cxf.version}</version>
-	            <exclusions>
-	                <exclusion>
+            <exclusions>
+                <exclusion>
                     <groupId>javax.ws.rs</groupId>
-	                    <artifactId>javax.ws.rs-api</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                    <groupId>org.codehaus.woodstox</groupId>
-	                    <artifactId>woodstox-core-asl</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                    <groupId>org.codehaus.woodstox</groupId>
-	                    <artifactId>stax2-api</artifactId>
-	                </exclusion>
-	            </exclusions>
-	        </dependency>            
--->
-
-
-	        <dependency>
-	            <groupId>org.apache.cxf</groupId>
-	            <artifactId>cxf-rt-transports-http</artifactId>
-	            <version>${cxf.version}</version>
-	        </dependency>
-	        <!-- This dependency is needed if you're using the Jetty container -->
-	        <dependency>
-	            <groupId>org.apache.cxf</groupId>
-	            <artifactId>cxf-rt-transports-http-jetty</artifactId>
-	            <version>${cxf.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.apache.cxf</groupId>
-	            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-	            <version>${cxf.version}</version>
-	            <exclusions>
-	                <exclusion>
-                    <groupId>javax.ws.rs</groupId>
-	                    <artifactId>javax.ws.rs-api</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                    <groupId>org.codehaus.woodstox</groupId>
-	                    <artifactId>woodstox-core-asl</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                    <groupId>org.codehaus.woodstox</groupId>
-	                    <artifactId>stax2-api</artifactId>
-	                </exclusion>
-	            </exclusions>
-	        </dependency>     
-	        <dependency>
-	            <groupId>commons-httpclient</groupId>
-	            <artifactId>commons-httpclient</artifactId>
-	            <version>3.1</version>
-	        </dependency>
-<dependency>
-	<groupId>javax.ws.rs</groupId>
-	<artifactId>javax.ws.rs-api</artifactId>
-	<version>2.0</version>
-</dependency>
+                    <artifactId>javax.ws.rs-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>woodstox-core-asl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>stax2-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
             
 </dependencies>
 </project>

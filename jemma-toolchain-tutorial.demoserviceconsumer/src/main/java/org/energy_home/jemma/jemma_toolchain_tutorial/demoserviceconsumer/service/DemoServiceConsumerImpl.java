@@ -31,6 +31,7 @@ public class DemoServiceConsumerImpl implements ManagedService{
 		this.runner = new DemoServiceConsumerRunner(this.periodicity_ms,this.demoservice);
 		Thread r = new Thread(this.runner);
 		r.start();
+		LOG.debug("DemoConsumerService activation complete");
 		
 	}
 

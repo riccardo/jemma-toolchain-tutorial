@@ -43,6 +43,7 @@
 						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.demoservice.api
 						</Export-Package>
 						<Service-Component>OSGI-INF/*.xml</Service-Component>
+						<Bundle-ActivationPolicy>lazy</Bundle-ActivationPolicy>
 					</instructions>
 				</configuration>
 			</plugin>
