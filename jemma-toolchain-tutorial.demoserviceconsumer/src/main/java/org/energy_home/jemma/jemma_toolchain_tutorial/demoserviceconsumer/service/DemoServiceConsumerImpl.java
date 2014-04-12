@@ -41,12 +41,12 @@ public class DemoServiceConsumerImpl implements ManagedService{
 	}
 
 
-	public void bindDemoService(DemoService d) {
+	protected void bindDemoService(DemoService d) {
 		LOG.trace("Binding DemoService " + d);
 		this.demoservice=d;
 	}
 	
-	public void unbindDemoService(DemoService d) {
+	protected void unbindDemoService(DemoService d) {
 		LOG.trace("Unbinding DemoService " + d);
 		this.demoservice=null;
 	}

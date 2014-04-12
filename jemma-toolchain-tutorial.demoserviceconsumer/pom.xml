@@ -44,6 +44,7 @@
 						org.energy_home.jemma.jemma_toolchain_tutorial.demoserviceconsumer.service
 						</Export-Package>
 						<Service-Component>OSGI-INF/*.xml</Service-Component>
+						<Bundle-ActivationPolicy>lazy</Bundle-ActivationPolicy>
 					</instructions>
 				</configuration>
 			</plugin>
