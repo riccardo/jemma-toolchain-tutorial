@@ -18,6 +18,8 @@ Step-by-step tutorial covering the main aspects and key choices of the maven-bas
 
 - increase version of jetty and webconsole
 
+- check if pax confman has a way to avoid re-loading properties on re-start withouth clean (i.e. "how can I keep my previous run-time conf rather than reloading at startup ??")
+- how to re-route logging to logging service on the webconsole ?
 
 
 
