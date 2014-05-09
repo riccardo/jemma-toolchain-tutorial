@@ -85,8 +85,7 @@ public class Activator implements BundleActivator {
         ClassLoader originalContextClassLoader = Thread.currentThread().getContextClassLoader();
         try {
             Thread.currentThread().setContextClassLoader(myClassLoader);
-            //XXX SCOMMENTA
-           // httpService.registerServlet("/jersey-http-service", new ServletContainer(), getJerseyServletParams(), null);
+           httpService.registerServlet("/jersey-http-service", new ServletContainer(), getJerseyServletParams(), null);
         } finally {
             Thread.currentThread().setContextClassLoader(originalContextClassLoader);
         }
