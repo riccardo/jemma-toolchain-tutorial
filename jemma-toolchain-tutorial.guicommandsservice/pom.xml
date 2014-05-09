@@ -38,6 +38,8 @@
 						<Import-Package>org.osgi.framework,
 						org.osgi.service.component,
 						org.osgi.service.cm,
+						org.osgi.util.tracker,
+						org.osgi.service.http,
 						org.slf4j,*
 						</Import-Package>
 						<Export-Package>org.energy_home.jemma.jemma_toolchain_tutorial.guicommandsservice.api,
