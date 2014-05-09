@@ -414,6 +414,29 @@
   <artifactId>asm-debug-all</artifactId>
   <version>5.0.2</version>
 </dependency>
+
+<!--for json support see https://jersey.java.net/documentation/latest/modules-and-dependencies.html-->
+<!-- we should also read https://jersey.java.net/documentation/latest/media.html -->
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-json-jackson</artifactId>
+    <version>2.9-SNAPSHOT</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>html-json</artifactId>
+    <version>2.9-SNAPSHOT</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-json-processing</artifactId>
+    <version>2.9-SNAPSHOT</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-moxy</artifactId>
+    <version>2.9-SNAPSHOT</version>
+</dependency>
                        
                  
 	</dependencies>
