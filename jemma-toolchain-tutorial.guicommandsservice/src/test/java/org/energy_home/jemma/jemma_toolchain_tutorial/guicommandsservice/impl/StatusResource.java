@@ -9,7 +9,8 @@ public class StatusResource {
 
     @GET @Produces("text/plain")
     public String getStatus() {
-        return "active";
+        //return new MyComplexResource();
+    	return "active";
     }
 
 }
